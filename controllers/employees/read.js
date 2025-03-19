@@ -3,7 +3,7 @@ import Employee from '../../models/Employee.js';
 
 
 
-let allemployee = async (req,res,next) => {
+let allEmployee = async (req,res,next) => {
     try {
         let all = await Employee.find()
         return res.status(200).json({
@@ -11,9 +11,7 @@ let allemployee = async (req,res,next) => {
         })
 
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
+        next(error)
     }
 }
 
@@ -26,9 +24,7 @@ let employeeByName = async (req,res,next) => {
         })
        
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
+      next(error)
     }
 }
 
@@ -41,10 +37,8 @@ let employeeById = async (req,res,next) => {
         })
        
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
-    }
+        next(error)
+        }
 }
  
 export  {allEmployee, employeeByName, employeeById}

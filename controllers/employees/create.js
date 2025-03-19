@@ -7,9 +7,7 @@ let create = async (req,res,next) => {
             response: createEmployee
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
-    }
+        next(error)
+        }
 }
 export default create;

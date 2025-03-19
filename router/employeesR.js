@@ -5,7 +5,7 @@ import create from '../controllers/employees/create.js';
 
 const routerEmployees = Router();
 
-routerEmployees.get('/allEmployees',allemployee);
+routerEmployees.get('/allEmployees',allEmployee);
 routerEmployees.get('/name/:nameParams',employeeByName);
 routerEmployees.get('/id/:id',employeeById);
 routerEmployees.post('/employeeCreate',create);   
